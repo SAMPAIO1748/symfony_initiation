@@ -62,12 +62,36 @@ class PageController extends AbstractController
         return new Response('Toto est très bête.');
     }
 
-    /**
+    /**                // wildcard
      * @Route("/number/{id}", name="number")
      */
     public function number($id)
     {
         $this->article;
         return new Response($id);
+    }
+
+    /**
+     * @Route("/article/{id}", name="article_show")
+     */
+    public function articleShow($id)
+    {
+        return new Response($this->article[$id]["contenu"]);
+    }
+
+    // route poker avec wildcard si la wild card est inférieur à 18 retourner le texte
+    // "vous n'êtes pas autorisé ici" et si la wildcard est supérieur ou égale à 18 
+    // retourner le texte "Vous êtes autorisé".
+
+    /**               //wildcard
+     * @Route("/poker/{age}", name="poker")
+     */
+    public function poker($age)
+    {
+        if ($age < 18) {
+            return new Response("Vous n'êtes pas autorisé ici.");
+        } else {
+            return new Response("Vous êtes autorisé.");
+        }
     }
 }
