@@ -26,4 +26,15 @@ class PageController extends AbstractController
         var_dump("home");
         die;
     }
+
+    // créer un deuxième route , legal, qui va afficher le texte : mentions légales du sites
+
+    /**
+     * @Route("/legal/", name="legal")
+     */
+    public function legal()
+    {
+        var_dump("mentions légales du site");
+        die;
+    }
 }
