@@ -1,19 +1,22 @@
-<!DOCTYPE html>
-<html lang="fr">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="{{ asset('css/style.css') }}">
-		<title>Document</title>
-	</head>
-	<body>
-		{% for article in articles %}
-			<h1>
-				<a href="{{ path('article_show', {'id' : article.id}) }}">{{ article.titre }}</a>
-			</h1>
-			<p>{{ article.contenu }}</p>
-		{% endfor %}
-		{# commentaire twig #}
-	</body>
-</html>
+{% extends "bases.html.twig" %}
+
+{% block header %}
+	<h2>Liste des articles</h2>
+{% endblock %}
+
+{% block main %}
+
+	{% for article in articles %}
+		<h1>
+			{# fonction path permet de créer un lien vers une route d'un controller #}
+			<a href="{{ path('article_show', {'id' : article.id}) }}">{{ article.titre }}</a>
+		</h1>
+		<p>{{ article.contenu }}</p>
+	{% endfor %}
+	{# commentaire twig #}
+
+{% endblock %}
+
+{% block footer %}
+	<h3>Merci d'avoir regardé nos articles</h3>
+{% endblock %}
