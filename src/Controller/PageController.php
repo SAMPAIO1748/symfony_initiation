@@ -22,7 +22,7 @@ class PageController extends AbstractController
             "contenu" => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error quisquam, doloribus tenetur minima recusandae amet obcaecati nisi omnis ullam accusantium quibusdam commodi iste sapiente incidunt unde dolore, sunt ducimus doloremque."
         ],
         3 => [
-            "titre" => "Titre 2",
+            "titre" => "Titre 3",
             "contenu" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit magni quisquam accusamus! Dolore rerum fugit praesentium iste fugiat voluptatem ducimus sunt sit! Doloremque nisi ratione ex quod natus impedit id."
         ]
     ];
@@ -76,8 +76,17 @@ class PageController extends AbstractController
      */
     public function articleShow($id)
     {
-        return new Response($this->article[$id]["contenu"]);
+
+        if (array_key_exists($id, $this->article)) {
+            $article = $this->article[$id];
+            return $this->render('article.html.twig', ['article' => $article]);
+        } else {
+            return $this->redirectToRoute('article_list');
+        }
     }
+
+    // Modifier la fonction articleShow pour retourné une vue qui affiche le titre 
+    // de l'article séléctionné grâce à l'id  et son contenue. 
 
     // route poker avec wildcard si la wild card est inférieur à 18 retourner le texte
     // "vous n'êtes pas autorisé ici" et si la wildcard est supérieur ou égale à 18 
@@ -89,6 +98,7 @@ class PageController extends AbstractController
     public function poker($age)
     {
         if ($age < 18) {
+            // fonction render permet de renvoyer une page twig qui sera traduite en html
             return $this->render("enfant.html.twig", ['age' => $age]);
         } else {
             return $this->render("adulte.html.twig", ['age' => $age]);
