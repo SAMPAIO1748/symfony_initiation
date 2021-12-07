@@ -94,4 +94,25 @@ class PageController extends AbstractController
             return new Response("Vous êtes autorisé.");
         }
     }
+
+    // modifier la fonction poker pour retourné des vues où s'affiche l'âge avec le message 
+    // adéquat et une image
+
+    /**
+     * @Route("/hello/", name="hello")
+     */
+    public function hello()
+    {
+        return $this->render('page.html.twig');
+    }
+
+    /**
+     * @Route("/articles/", name="article_list")
+     */
+    public function articleList()
+    {
+        $articles = $this->article;
+
+        return $this->render('articles.html.twig', ['articles' => $articles]);
+    }
 }
