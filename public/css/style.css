@@ -1,3 +1,14 @@
 h1 {
   color: red;
+  background-color: green;
+}
+
+h2{
+    color: blue;
+    background-color: red;
+}
+
+p{
+    color: green;
+    background-color: yellow;
 }

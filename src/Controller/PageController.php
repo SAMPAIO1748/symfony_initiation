@@ -15,15 +15,18 @@ class PageController extends AbstractController
              amet consectetur adipisicing elit. 
              Voluptates, officiis praesentium amet vitae perspiciatis id, 
              ducimus natus optio in molestiae, 
-             placeat harum veniam eaque obcaecati tempore adipisci ratione quos ut!"
+             placeat harum veniam eaque obcaecati tempore adipisci ratione quos ut!",
+            "id" => 1
         ],
         2 => [
             "titre" => "Titre 2",
-            "contenu" => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error quisquam, doloribus tenetur minima recusandae amet obcaecati nisi omnis ullam accusantium quibusdam commodi iste sapiente incidunt unde dolore, sunt ducimus doloremque."
+            "contenu" => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error quisquam, doloribus tenetur minima recusandae amet obcaecati nisi omnis ullam accusantium quibusdam commodi iste sapiente incidunt unde dolore, sunt ducimus doloremque.",
+            "id" => 2
         ],
         3 => [
             "titre" => "Titre 3",
-            "contenu" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit magni quisquam accusamus! Dolore rerum fugit praesentium iste fugiat voluptatem ducimus sunt sit! Doloremque nisi ratione ex quod natus impedit id."
+            "contenu" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit magni quisquam accusamus! Dolore rerum fugit praesentium iste fugiat voluptatem ducimus sunt sit! Doloremque nisi ratione ex quod natus impedit id.",
+            "id" => 3
         ]
     ];
     /**
