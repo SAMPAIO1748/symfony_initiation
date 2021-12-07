@@ -89,9 +89,9 @@ class PageController extends AbstractController
     public function poker($age)
     {
         if ($age < 18) {
-            return new Response("Vous n'êtes pas autorisé ici.");
+            return $this->render("enfant.html.twig", ['age' => $age]);
         } else {
-            return new Response("Vous êtes autorisé.");
+            return $this->render("adulte.html.twig", ['age' => $age]);
         }
     }
 
