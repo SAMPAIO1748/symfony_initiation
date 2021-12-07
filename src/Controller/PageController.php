@@ -108,6 +108,8 @@ class PageController extends AbstractController
         }
     }
 
+
+
     // modifier la fonction poker pour retourné des vues où s'affiche l'âge avec le message 
     // adéquat et une image
 
